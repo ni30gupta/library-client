@@ -34,7 +34,7 @@ function Login() {
 
     const handleLogin = () => {
         const payload = { username, password }
-        axios.post(`${base_url}/users/login`, payload)
+        axios.post(`${base_url}/users/login`, payload , {  withCredentials: true})
             .then(data => {
                 // setting token in localstorage to persist login
                 localStorage.setItem('token', data.data.token)
